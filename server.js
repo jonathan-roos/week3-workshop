@@ -1,16 +1,17 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app)
-var path = require('path');
-require('./routes/homeroute.js').route(app,path);
-require('./routes/testroute.js').route(app,path);
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+// Import routes from ./routes directory
+require('./routes/home.js').route(app,path);
+require('./routes/account.js').route(app,path);
 
-app.use(express.static(__dirname+'/www'));
+app.use(express.static(__dirname +'/www')); // Serve static content for the app from the 'public' dir
 
-let server = http.listen(3000, function(){
-    let host = server.address().address;
-    let port = server.address().port;
-    console.log("My first Nodejs Server!");
-    console.log("Server listening on: "+ host + "port:" + port);
-});
+app.listen(3000, function(){
+    var d = new Date();
+    var n = d.getHours();
+    var m = d.getMinutes();
+    console.log('Server has been started at: ' + n +':'+m)
+})
 
