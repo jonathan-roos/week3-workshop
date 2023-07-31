@@ -14,7 +14,7 @@ function ajaxPost(){
     $.ajax({
         type: "POST",
         contentType: "application/json",
-        url: window.location + "api/login", // Not sure if I need api
+        url: window.location + "login", // Not sure if I need api
         data: JSON.stringify(formData),
         dataType: 'json',
         success : function(customer) {
@@ -35,4 +35,9 @@ function ajaxPost(){
     });
 
     resetData();
+}
+
+function resetData(){
+    $("#email").val("");
+    $("#upwd").val("");
 }
