@@ -7,6 +7,7 @@ app.use(bodyParser.json());
 // Import routes from ./routes directory
 require('./routes/home.js').route(app,path);
 require('./routes/login.js').route(app,path);
+require('./routes/account.js').route(app,path);
 
 app.use(express.static(__dirname +'/www')); // Serve static content for the app from the 'public' dir
 
