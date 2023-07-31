@@ -26,3 +26,23 @@ form input{
     background-color:red;
     padding:1em;
 }
+body {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+img {
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+h2 {
+    margin-top: 20px;
+}
+p {
+    margin: 10px 0;
+}
+strong {
+    margin-right: 5px;
+}
